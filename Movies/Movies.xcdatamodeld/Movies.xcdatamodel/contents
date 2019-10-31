@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoryMoviesEntity" representedClassName="CategoryMoviesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryId" attributeType="String"/>
+        <attribute name="movieIds" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="page" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="categoryId"/>
+                <constraint value="page"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="FavoriteMovieEntity" representedClassName="FavoriteMovieEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="GenreEntity" representedClassName="GenreEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MovieEntity" representedClassName="MovieEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="adult" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="backdropPath" optional="YES" attributeType="String"/>
+        <attribute name="genreIds" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="originalLanguage" attributeType="String"/>
+        <attribute name="originalTitle" attributeType="String"/>
+        <attribute name="overview" optional="YES" attributeType="String"/>
+        <attribute name="popularity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="posterPath" optional="YES" attributeType="String"/>
+        <attribute name="productionCountries" optional="YES" attributeType="Transformable" customClassName="[ProductionCountry]"/>
+        <attribute name="releaseDate" attributeType="String"/>
+        <attribute name="runtime" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="video" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="voteAverage" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="voteCount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="WatchedMovieEntity" representedClassName="WatchedMovieEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="WatchLaterMovieEntity" representedClassName="WatchLaterMovieEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <configuration name="Test"/>
+    <elements>
+        <element name="CategoryMoviesEntity" positionX="-11.26171875" positionY="-79.01953125" width="128" height="88"/>
+        <element name="FavoriteMovieEntity" positionX="-379.19921875" positionY="-30.23046875" width="128" height="58"/>
+        <element name="GenreEntity" positionX="-5.3125" positionY="98.26953125" width="116.66015625" height="73"/>
+        <element name="MovieEntity" positionX="-144" positionY="-45" width="128" height="283"/>
+        <element name="WatchedMovieEntity" positionX="-225" positionY="54" width="128" height="58"/>
+        <element name="WatchLaterMovieEntity" positionX="-441.1953125" positionY="93.02734375" width="128" height="58"/>
+    </elements>
+</model>
