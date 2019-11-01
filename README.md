@@ -24,11 +24,11 @@ It's iOS application working with [The Movie DB API](https://www.themoviedb.org/
 ## Demo
 
 #### Discover  
-![](discover-part1.gif)
-![](discover-part2.gif)
+![](Demo/discover-part1.gif)
+![](Demo/discover-part2.gif)
 
 #### Search  
-![](search.gif)
+![](Demo/search.gif)
 
 #### My Lists  
-![](my-lists.gif)
+![](Demo/my-lists.gif)
