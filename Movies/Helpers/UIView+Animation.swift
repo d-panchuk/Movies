@@ -30,7 +30,7 @@ extension UIView {
             delay: 0,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.5,
-            options: .curveLinear,
+            options: [.curveLinear, .allowUserInteraction],
             animations: {
                 view.alpha = 1
                 view.layer.transform = CATransform3DIdentity
