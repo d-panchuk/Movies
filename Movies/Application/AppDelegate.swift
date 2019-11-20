@@ -5,9 +5,7 @@
 //  Copyright © 2019 dpanchuk. All rights reserved.
 //
 
-#if DEBUG
 import RxSwift
-#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        startApplicationWithCoordinator()
-        initialSetup()
+        initialSetup() {
+            self.startApplicationWithCoordinator()
+        }
         
         return true
     }
@@ -38,17 +37,19 @@ extension AppDelegate {
         coordinator?.start()
     }
     
-    func initialSetup() {
+    func initialSetup(completion: @escaping () -> Void) {
         #if DEBUG
 //        setupRxResourceLogging()
         #endif
         
-        updateGenresFromNetwork()
+        updateGenresFromNetwork() { completion() }
     }
     
-    private func updateGenresFromNetwork() {
+    private func updateGenresFromNetwork(completion: @escaping () -> Void) {
         let remoteDataSource = RemoteDataSource()
+        let group = DispatchGroup()
         
+        group.enter()
         remoteDataSource.getGenres { genres in
             DispatchQueue.main.async {
                 do {
@@ -64,8 +65,10 @@ extension AppDelegate {
                 }
                 
                 CoreDataManager.shared.saveContext()
+                group.leave()
             }
         }
+        group.notify(queue: .main, execute: completion)
     }
     
     private func removeCachedGenres() throws {
